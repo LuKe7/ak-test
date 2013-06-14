@@ -43,10 +43,14 @@ import com.example.brightcovetest.VideoController.ControlledVideo;
 public class MainActivity extends Activity {
 	private static final String CATALOG_ID = "jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..";
 	private static final String VIDEO_ID_1 = "1520880903001";
+	private static final String FULLSCREEN_FLAG = "fullScreenOn";
 
+	private boolean isFullScreen = false;
 	private MediaController controller;
 	private Catalog catalog;
 	private BrightcoveWrapper brightcoveVideoView;
+	private Coordinate originalCoordinate;
+	private LinearLayout.LayoutParams originalParams;
 
 	private ProgressBar loadingSpinner;
 	private TextView counterDisplay;
@@ -56,15 +60,6 @@ public class MainActivity extends Activity {
 	Queue<ViewGroup.LayoutParams> paramList = new LinkedList<ViewGroup.LayoutParams>();
 	private VideoController vc;
 
-	private class ViewDrawParams {
-		public Coordinate c;
-		public ViewGroup.LayoutParams layoutParams;
-
-		public ViewDrawParams(Coordinate c, ViewGroup.LayoutParams p) {
-			this.c = c;
-			layoutParams = p;
-		}
-	}
 	private void updateParentForFullscreen(View myView) {
 		if (myView.getParent() == myView.getRootView()) {
 			myView.getParent().recomputeViewAttributes(myView);
@@ -106,8 +101,6 @@ public class MainActivity extends Activity {
 		}
 		else if (originalParams instanceof FrameLayout.LayoutParams) {
 			FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-			params.setMargins(0, 0, 0, 0);
-			params.gravity = Gravity.FILL;
 			return params;
 		}
 		else if (originalParams instanceof GridLayout.LayoutParams) {
@@ -170,6 +163,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_main);
 
 		brightcoveVideoView = (BrightcoveWrapper) findViewById(R.id.video_view);
@@ -180,7 +174,15 @@ public class MainActivity extends Activity {
 		loadingSpinner = (ProgressBar) findViewById(R.id.loading_spinner);
 		hideLoadingSpinner();
 
-		playCatalogVideo(CATALOG_ID, VIDEO_ID_1);
+		if (savedInstanceState != null) {
+			if (savedInstanceState.containsKey(FULLSCREEN_FLAG)) {
+
+				isFullScreen = savedInstanceState.getBoolean(FULLSCREEN_FLAG);
+			}
+		}
+
+		// playCatalogVideo(CATALOG_ID, VIDEO_ID_1);
+		playContent("http://media.w3.org/2010/05/sintel/trailer.mp4");
 
 		videoContainer = findViewById(R.id.video_container);
 		videoContainer.setOnClickListener(new OnClickListener() {
@@ -198,45 +200,35 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		vc = (VideoController) findViewById(R.id.our_video_view);
-
+		initVideoController();
 		brightcoveVideoView.setVideoController(vc);
+
+		if (isFullScreen) {
+			setFullScreen(true);
+		}
+	}
+
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+
+		outState.putBoolean(FULLSCREEN_FLAG, isFullScreen);
+	}
+
+	private void initVideoController() {
+		vc = (VideoController) findViewById(R.id.our_video_view);
 		vc.registerVideo(new ControlledVideo() {
-			LinearLayout.LayoutParams originalParams;
-			Coordinate originalCoordinate;
 
 			@Override
 			public void toggleFullscreen(boolean toggleOn) {
 				if (toggleOn) {
 					Log.d("", "COORDINATES: fullscreen");
-					originalParams = (android.widget.LinearLayout.LayoutParams) videoContainer.getLayoutParams();
 
-					updateParentForFullscreen(videoContainer);
+					setFullScreen(true);
 
-					originalCoordinate = new Coordinate(videoContainer.getX(), videoContainer.getY());
-					videoContainer.setX(0);
-					videoContainer.setY(0);
-
-					ViewGroup.LayoutParams params = getlayout(originalParams);
-
-					videoContainer.setLayoutParams(params);
-					vc.setVisibility(View.INVISIBLE);
-
-					findViewById(android.R.id.content).invalidate();
 				}
 				else {
-					if (originalCoordinate != null) {
-						Log.d("", "COORDINATES: reseting");
-						videoContainer.setX(originalCoordinate.x);
-						videoContainer.setY(originalCoordinate.y);
-
-						videoContainer.setLayoutParams(originalParams);
-
-						restoreLayout(videoContainer);
-						vc.setVisibility(View.VISIBLE);
-
-					}
-
+					setFullScreen(false);
 				}
 			}
 
@@ -330,17 +322,8 @@ public class MainActivity extends Activity {
 				return 0;
 			}
 		});
-
-//		brightcoveVideoView.setOnPreparedListener(new OnPreparedListener() {
-//
-//			@Override
-//			public void onPrepared(MediaPlayer mp) {
-//				brightcoveVideoView.start();
-//			}
-//		});
-		// videoView.setVideoURI(Uri.parse("http://media.w3.org/2010/05/sintel/trailer.mp4"));
-
 	}
+
 	private void initController(View anchorView, MediaPlayerControl mpc) {
 		controller = new CustomizableMediaController(this, true, false);
 		controller.setPrevNextListeners(null, null);
@@ -363,11 +346,12 @@ public class MainActivity extends Activity {
 	}
 
 	public void playContent(String contentUrl) {
-		controller.show();
+		// controller.show();
 
-		showLoadingSpinner();
+		// showLoadingSpinner();
 
-		brightcoveVideoView.setVideoPath(contentUrl);
+		// brightcoveVideoView.setVideoPath(contentUrl);
+		brightcoveVideoView.add(Video.createVideo(contentUrl));
 
 		setupEventEmitter();
 	}
@@ -412,12 +396,52 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	public synchronized void setFullScreen(boolean fullscreenOn) {
+		Log.d("", "ONCREATE setFullScreen called.");
+		if (videoContainer != null) {
+			Log.d("", "ONCREATE setFullScreen called. 1");
+			if (fullscreenOn) {
+				isFullScreen = true;
+				Log.d("", "ONCREATE setFullScreen called. 2");
+				originalParams = (android.widget.LinearLayout.LayoutParams) videoContainer.getLayoutParams();
+
+				updateParentForFullscreen(videoContainer);
+
+				originalCoordinate = new Coordinate(videoContainer.getX(), videoContainer.getY());
+				videoContainer.setX(0);
+				videoContainer.setY(0);
+
+				ViewGroup.LayoutParams params = getlayout(originalParams);
+
+				videoContainer.setLayoutParams(params);
+				vc.setVisibility(View.INVISIBLE);
+
+				findViewById(android.R.id.content).invalidate();
+			}
+			else {
+				Log.d("", "ONCREATE setFullScreen called. 3");
+				if (originalCoordinate != null) {
+					Log.d("", "ONCREATE setFullScreen called. 4");
+					isFullScreen = false;
+					videoContainer.setX(originalCoordinate.x);
+					videoContainer.setY(originalCoordinate.y);
+
+					videoContainer.setLayoutParams(originalParams);
+
+					restoreLayout(videoContainer);
+					vc.setVisibility(View.VISIBLE);
+
+				}
+			}
+		}
 	}
 
 }
