@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/video_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:text="00:00"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/video_length"
+        android:layout_toLeftOf="@id/video_length"
+        android:text="/"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/video_length"
+        android:layout_toLeftOf="@+id/slash"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/video_length"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toLeftOf="@id/current_time" />
+
+    <ImageButton
+        android:id="@+id/rewind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/seek_bar"
+        android:layout_below="@id/seek_bar"
+        android:src="@android:drawable/ic_media_rew" />
+    
+     <CheckBox
+        android:id="@+id/play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rewind"
+        android:layout_toRightOf="@id/rewind"
+        android:button="@drawable/play_pause_selector" />
+
+    <ImageButton
+        android:id="@+id/fastforward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/play_pause"
+        android:layout_below="@id/seek_bar"
+        android:layout_toRightOf="@id/play_pause"
+        android:src="@android:drawable/ic_media_ff" />
+
+   
+
+    <CheckBox
+        android:id="@+id/captions_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rewind"
+        android:layout_toLeftOf="@+id/fullscreen_btn"
+        android:button="@drawable/captions_selector" />
+
+    <CheckBox
+        android:id="@+id/fullscreen_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rewind"
+        android:layout_alignRight="@id/video_length"
+        android:button="@drawable/fullscreen_selector" />
+
+</merge>

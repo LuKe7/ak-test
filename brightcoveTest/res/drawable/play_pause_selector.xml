@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <!-- When the play/pause button is checked, the video is assumed to be PLAYING. As a result, the button displays PAUSE.  -->
+    <item android:state_checked="true"
+        android:drawable="@android:drawable/ic_media_pause"/>
+    
+        <item 
+        android:drawable="@android:drawable/ic_media_play"/>
+    
+    
+
+</selector>
