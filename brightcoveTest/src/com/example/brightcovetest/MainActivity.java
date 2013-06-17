@@ -7,11 +7,16 @@ import java.util.Queue;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -19,10 +24,14 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.AbsoluteLayout;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.Gallery;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.MediaController;
 import android.widget.MediaController.MediaPlayerControl;
 import android.widget.ProgressBar;
@@ -31,6 +40,7 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.brightcove.player.event.Event;
 import com.brightcove.player.event.EventEmitter;
@@ -44,6 +54,7 @@ public class MainActivity extends Activity {
 	private static final String CATALOG_ID = "jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..";
 	private static final String VIDEO_ID_1 = "1520880903001";
 	private static final String FULLSCREEN_FLAG = "fullScreenOn";
+	private static final int SIGN_IN_REQUEST_CODE = 21;
 
 	private boolean isFullScreen = false;
 	private MediaController controller;
@@ -53,8 +64,11 @@ public class MainActivity extends Activity {
 	private LinearLayout.LayoutParams originalParams;
 
 	private ProgressBar loadingSpinner;
+	private DrawerLayout drawerLayout;
 	private TextView counterDisplay;
 	private View videoContainer;
+	private ActionBarDrawerToggle drawerToggle;
+	private ListView sideMenu;
 
 	ArrayList<Boolean> clipList = new ArrayList<Boolean>();
 	Queue<ViewGroup.LayoutParams> paramList = new LinkedList<ViewGroup.LayoutParams>();
@@ -107,6 +121,9 @@ public class MainActivity extends Activity {
 			return new GridLayout.LayoutParams(new ViewGroup.MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		}
 
+		else if (originalParams instanceof android.support.v4.widget.DrawerLayout.LayoutParams) {
+			return new android.support.v4.widget.DrawerLayout.LayoutParams(LayoutParams.MATCH_PARENT, android.support.v4.widget.DrawerLayout.LayoutParams.MATCH_PARENT);
+		}
 		else if (originalParams instanceof ViewGroup.MarginLayoutParams) {
 			return new ViewGroup.MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		}
@@ -165,6 +182,80 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_main);
+		sideMenu = (ListView) findViewById(R.id.sideMenu);
+		final String[] settings = {"Trailer", "Space", "Sign in"};
+		sideMenu.setAdapter(new ArrayAdapter<String>(this, R.layout.side_menu_item, settings));
+		sideMenu.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				switch (position) {
+					case 0 :
+						if (sideMenu.isItemChecked(position)) {
+							brightcoveVideoView.clear();
+							playContent("http://media.w3.org/2010/05/sintel/trailer.mp4");
+							sideMenu.setItemChecked(position, true);
+							setTitle(settings[position]);
+						}
+						drawerLayout.closeDrawer(sideMenu);
+						break;
+
+					case 1 :
+						if (sideMenu.isItemChecked(position)) {
+							brightcoveVideoView.clear();
+							playCatalogVideo(CATALOG_ID, VIDEO_ID_1);
+							sideMenu.setItemChecked(position, true);
+							setTitle(settings[position]);
+						}
+						drawerLayout.closeDrawer(sideMenu);
+						break;
+
+					case 2 :
+						brightcoveVideoView.pause();
+						TextView tv = (TextView) sideMenu.getChildAt(position);
+						if (tv.getText().equals("Sign Out")) {
+							tv.setText("Sign In");
+							LoginManager.signOut();
+							Toast.makeText(view.getContext(), "Signed Out", Toast.LENGTH_SHORT).show();
+							
+						}
+						else {
+							tv.setText("Sign Out");
+							Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+							MainActivity.this.startActivityForResult(intent, SIGN_IN_REQUEST_CODE);
+						}
+
+						
+
+						break;
+						
+					default :
+						break;
+				}
+
+			}
+		});
+		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
+		drawerToggle = new ActionBarDrawerToggle(this, /* host Activity */
+		drawerLayout, /* DrawerLayout object */
+		R.drawable.ic_drawer, /* nav drawer image to replace 'Up' caret */
+		R.string.accessibiility_open_settings, /* "open drawer" description for accessibility */
+		R.string.accessibility_close_settings /* "close drawer" description for accessibility */
+		) {
+			public void onDrawerClosed(View view) {
+				// getActionBar().setTitle(getTitle());
+				invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+			}
+
+			public void onDrawerOpened(View drawerView) {
+				getActionBar().setTitle("Options");
+				invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+			}
+		};
+		drawerLayout.setDrawerListener(drawerToggle);
 
 		brightcoveVideoView = (BrightcoveWrapper) findViewById(R.id.video_view);
 
@@ -322,6 +413,45 @@ public class MainActivity extends Activity {
 				return 0;
 			}
 		});
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// The action bar home/up action should open or close the drawer.
+		// ActionBarDrawerToggle will take care of this.
+		if (drawerToggle.onOptionsItemSelected(item)) {
+			return true;
+		}
+		// Handle action buttons
+		switch (item.getItemId()) {
+		// case R.id.action_websearch:
+		// // create intent to perform web search for this planet
+		// Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+		// intent.putExtra(SearchManager.QUERY, getActionBar().getTitle());
+		// // catch event that there's no activity to handle intent
+		// if (intent.resolveActivity(getPackageManager()) != null) {
+		// startActivity(intent);
+		// } else {
+		// Toast.makeText(this, R.string.app_not_available, Toast.LENGTH_LONG).show();
+		// }
+		// return true;
+			default :
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		// Sync the toggle state after onRestoreInstanceState has occurred.
+		drawerToggle.syncState();
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		// Pass any configuration change to the drawer toggls
+		drawerToggle.onConfigurationChanged(newConfig);
 	}
 
 	private void initController(View anchorView, MediaPlayerControl mpc) {

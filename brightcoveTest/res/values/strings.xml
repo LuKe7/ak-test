@@ -4,5 +4,7 @@
     <string name="app_name">brightcoveTest</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    
+    <string name="accessibiility_open_settings">open</string>
+	<string name="accessibility_close_settings">close</string>
 </resources>
