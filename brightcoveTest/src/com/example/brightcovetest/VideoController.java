@@ -1,11 +1,7 @@
 package com.example.brightcovetest;
 
-import java.util.Formatter;
-import java.util.Locale;
-
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -14,6 +10,9 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+
+import java.util.Formatter;
+import java.util.Locale;
 
 public class VideoController extends RelativeLayout {
 	private ImageButton rewindBtn;

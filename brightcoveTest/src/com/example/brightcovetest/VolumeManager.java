@@ -1,13 +1,11 @@
 package com.example.brightcovetest;
 
+import android.content.Context;
 import android.media.AudioManager;
+import android.view.KeyEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-
-import android.content.Context;
-import android.view.KeyEvent;
 
 /**
  * Created by dx068 on 13-06-19.
@@ -15,6 +13,7 @@ import android.view.KeyEvent;
 public class VolumeManager {
     private AudioManager audioManager;
     private HashMap<Integer, Boolean> isMuteMap = new HashMap<Integer, Boolean>();
+    private HashMap<Integer, Integer> volumeMap = new HashMap<Integer, Integer>();
 
 
     public static interface VolumeObserver {
@@ -155,10 +154,20 @@ public class VolumeManager {
     }
 
     public synchronized int getStreamVolume(int streamType) {
+        if (isStreamMute(streamType)){
+           return volumeMap.containsKey(streamType) ? volumeMap.get(streamType) : 0;
+        }else{
+            return getStreamVolumeFromAudioManager(streamType);
+
+        }
+    }
+
+    private int getStreamVolumeFromAudioManager(int streamType) {
         return audioManager.getStreamVolume(streamType);
     }
 
     public synchronized void setStreamMute(int streamType, boolean mute) {
+        volumeMap.put(streamType,getStreamVolumeFromAudioManager(AudioManager.STREAM_MUSIC));
         audioManager.setStreamMute(streamType, mute);
         isMuteMap.put(streamType, mute);
         notifyVolumeMute(AudioManager.STREAM_MUSIC, mute);

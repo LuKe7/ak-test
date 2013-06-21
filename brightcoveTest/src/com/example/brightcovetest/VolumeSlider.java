@@ -1,17 +1,13 @@
 package com.example.brightcovetest;
 
 import android.content.Context;
-import android.database.ContentObserver;
 import android.media.AudioManager;
-import android.net.Uri;
-import android.os.Handler;
-import android.provider.Settings;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.SeekBar;
 
-import com.example.brightcovetest.VolumeManager.*;
+import com.example.brightcovetest.VolumeManager.VolumeObserver;
+import com.example.brightcovetest.VolumeManager.VolumeStreamController;
 
 /**
  * Created by dx068 on 13-06-19.
@@ -40,6 +36,7 @@ public class VolumeSlider extends SeekBar {
         @Override
         public void onVolumeUp() {
             setProgress(VolumeManager.getInstance().getStreamVolume(AudioManager.STREAM_MUSIC));
+
         }
 
         @Override
@@ -71,19 +68,23 @@ public class VolumeSlider extends SeekBar {
         init(context);
     }
 
-    @Override
-    public synchronized void setProgress(int progress) {
-        if(isEnabled()){
-          super.setProgress(progress);
-        }
+//    @Override
+//    public synchronized void setProgress(int progress) {
+//       // if(isEnabled()){
+//          super.setProgress(progress);
+       // }
 //        else
 //            setProgress(VolumeManager.getInstance().getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-    }
+    //}
 
     private void init(Context context) {
         setMax(VolumeManager.getInstance().getStreamMaxVolume(AudioManager.STREAM_MUSIC));
         setEnabled(!VolumeManager.getInstance().isStreamMute(AudioManager.STREAM_MUSIC));
+
+
         setProgress(VolumeManager.getInstance().getStreamVolume(AudioManager.STREAM_MUSIC));
+
+
         super.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
@@ -118,10 +119,11 @@ public class VolumeSlider extends SeekBar {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
 
-        setProgress(VolumeManager.getInstance().getStreamVolume(AudioManager.STREAM_MUSIC));
+
+            setProgress(VolumeManager.getInstance().getStreamVolume(AudioManager.STREAM_MUSIC));
+
         VolumeManager.getInstance().registerObserver(observer);
         VolumeManager.getInstance().addController(musicController);
-
         VolumeManager.getInstance().addController(new VolumeManager.VolumeStreamController() {
             @Override
             public boolean overrideSystemControl(int keyCode) {
@@ -133,8 +135,6 @@ public class VolumeSlider extends SeekBar {
                 return AudioManager.STREAM_ALARM;
             }
         });
-
-
     }
 
     @Override

@@ -1,18 +1,12 @@
 package com.example.brightcovetest;
 
-import java.util.Formatter;
-import java.util.Locale;
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.MediaController;
@@ -20,6 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+
+import java.util.Formatter;
+import java.util.Locale;
 
 public class CustomizableMediaController extends MediaController {
 	private static final int DEFAULT_TIMEOUT = 3000;

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.example.brightcovetest.BackgroundLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@android:color/transparent"
+               android:id="@+id/move_frame"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/xcoordinate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"/>
+
+
+    <TextView
+            android:id="@+id/ycoordinate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"/>
+
+    <com.example.brightcovetest.MoveableRectangle
+            android:id="@+id/square"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:background="@android:color/holo_orange_light"/>
+
+    <com.example.brightcovetest.MoveableCircle
+            android:id="@+id/circle"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:clickable="true"
+        android:layout_gravity="top|right"
+        android:focusableInTouchMode="true"
+        android:background="@android:color/holo_purple"
+        android:focusable="true"/>
+
+    <com.example.brightcovetest.MoveableTriangle
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:clickable="true"
+            android:layout_gravity="top|center_horizontal"
+            android:focusableInTouchMode="true"
+            android:background="@android:color/holo_red_light"
+            android:focusable="true"/>
+
+    <com.example.brightcovetest.MoveablePentagon
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:focusableInTouchMode="true"
+            android:background="@android:color/holo_green_light"
+            android:focusable="true"/>
+</com.example.brightcovetest.BackgroundLayout>

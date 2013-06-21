@@ -9,7 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class LoginManager {
     private static HashMap<String, String> userMap = new HashMap<String, String>();

@@ -14,22 +14,39 @@
     <list default="true" id="cffe97e0-cf6d-498d-afea-33732b13c91b" name="Default" comment="" />
     <ignored path="xl-brightcove_test.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371564898035" ignored="false" />
+    <file path="/fragment.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371843499685" ignored="false" />
     <file path="/activity_main.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371564640883" ignored="false" />
-    <file path="/MainActivity.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371739463642" ignored="false" />
+    <file path="/MainActivity.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371824285808" ignored="false" />
     <file path="/LoginManager.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371579792289" ignored="false" />
-    <file path="/a.dummy" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371737293024" ignored="false" />
+    <file path="/a.dummy" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371839249938" ignored="false" />
     <file path="/TestApplicaton.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371568509227" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371568540885" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371839526644" ignored="false" />
     <file path="/OptionsAdapter.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371736647137" ignored="false" />
     <file path="/Option.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371674837658" ignored="false" />
-    <file path="/Dummy.txt" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371647821616" ignored="false" />
+    <file path="/Dummy.txt" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371763437682" ignored="false" />
     <file path="/volume_slider.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371666953722" ignored="false" />
     <file path="/VolumeObserverManager.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371738133937" ignored="false" />
     <file path="/TestView.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371657272329" ignored="false" />
     <file path="/TestVIew.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371656600129" ignored="false" />
-    <file path="/VolumeSlider.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371739667820" ignored="false" />
-    <file path="/VolumeManager.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371737249298" ignored="false" />
+    <file path="/VolumeSlider.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371748235498" ignored="false" />
+    <file path="/VolumeManager.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371748716450" ignored="false" />
+    <file path="/VideoController.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371748254535" ignored="false" />
+    <file path="/VoiceRecognitionActivity.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371754024852" ignored="false" />
+    <file path="/activity_voice_recognition.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371751908360" ignored="false" />
+    <file path="/SpeachUtils.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371761422204" ignored="false" />
+    <file path="/SpeechUtils.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371762384006" ignored="false" />
+    <file path="/BrightcoveWrapper.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371762867719" ignored="false" />
+    <file path="/shape.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371844473525" ignored="false" />
+    <file path="/ShapeActivity.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371828051939" ignored="false" />
+    <file path="/a.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371764347541" ignored="false" />
+    <file path="/sample.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371764014992" ignored="false" />
+    <file path="/BackgroundLayout.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371828143403" ignored="false" />
+    <file path="/Shape1.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371825580172" ignored="false" />
+    <file path="/styles.xml" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371827659678" ignored="false" />
+    <file path="/shape2.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371839239436" ignored="false" />
+    <file path="/Shape2.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371839235824" ignored="false" />
+    <file path="/MoveableTriangle.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371844455477" ignored="false" />
+    <file path="/MoveablePentagon.java" changelist="cffe97e0-cf6d-498d-afea-33732b13c91b" time="1371845387958" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +66,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -85,7 +103,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -94,7 +111,7 @@
     <favorites_list name="xl-brightcove_test" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.626403">
+    <splitter split-orientation="horizontal" split-proportion="0.631528">
       <split-first>
         <leaf>
           <file leaf-file-name="Option.java" pinned="false" current="false" current-in-tab="false">
@@ -106,10 +123,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="VolumeSlider.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="VolumeSlider.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeSlider.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="90" column="71" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.41192052">
+                <state line="123" column="0" selection-start="3846" selection-end="3846" vertical-scroll-proportion="-40.0">
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -120,19 +137,13 @@
           <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MainActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="334" column="12" selection-start="14227" selection-end="14231" vertical-scroll-proportion="-25.653847">
+                <state line="796" column="15" selection-start="30145" selection-end="30146" vertical-scroll-proportion="-12.961538">
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#4032#4041#0" expanded="true" />
-                    <element signature="e#4105#4129#0" expanded="true" />
-                    <element signature="e#8971#11656#0" expanded="true" />
-                    <element signature="e#11645#11646#0" expanded="true" />
-                    <element signature="e#13824#14215#0" expanded="true" />
-                    <element signature="e#14204#14205#0" expanded="true" />
-                    <element signature="e#22625#22868#0" expanded="true" />
-                    <element signature="e#22857#22858#0" expanded="true" />
-                    <element signature="e#22935#23174#0" expanded="true" />
-                    <element signature="e#23163#23164#0" expanded="true" />
+                    <element signature="e#10378#13389#0" expanded="true" />
+                    <element signature="e#13378#13379#0" expanded="true" />
+                    <element signature="e#26904#27149#0" expanded="true" />
+                    <element signature="e#27138#27139#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -141,7 +152,16 @@
           <file leaf-file-name="OptionsAdapter.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/OptionsAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="79" column="33" selection-start="2143" selection-end="2150" vertical-scroll-proportion="0.0">
+                <state line="76" column="33" selection-start="2086" selection-end="2093" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MoveablePentagon.java" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveablePentagon.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="8" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.42455244">
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -149,32 +169,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="VideoController.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VideoController.java">
+          <file leaf-file-name="ShapeActivity.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/ShapeActivity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="219" column="30" selection-start="5651" selection-end="5651" vertical-scroll-proportion="-28.692308">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LoginManager.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/LoginManager.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="102" column="42" selection-start="3030" selection-end="3056" vertical-scroll-proportion="-53.076923">
+                <state line="19" column="13" selection-start="485" selection-end="490" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#386#402#0" expanded="true" />
+                    <element signature="e#694#1096#0" expanded="true" />
+                    <element signature="e#1085#1086#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BrightcoveWrapper.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/BrightcoveWrapper.java">
+          <file leaf-file-name="MoveableCircle.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableCircle.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="37" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
-                  <folding />
+                <state line="69" column="0" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -183,16 +197,73 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="VolumeManager.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="VolumeManager.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeManager.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="36" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.4541779">
+                <state line="141" column="5" selection-start="3909" selection-end="3909" vertical-scroll-proportion="-8.346154">
+                  <folding>
+                    <element signature="e#360#378#0" expanded="true" />
+                    <element signature="e#443#461#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shape.xml" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/res/layout/shape.xml">
+              <provider editor-type-id="android-designer">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="52" selection-start="1870" selection-end="1870" vertical-scroll-proportion="0.95013475">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/res/values/styles.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="24" column="74" selection-start="994" selection-end="994" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SpeechUtils.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/SpeechUtils.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="88" column="0" selection-start="2691" selection-end="2691" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="VoiceRecognitionActivity.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VoiceRecognitionActivity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="65" column="21" selection-start="2231" selection-end="2236" vertical-scroll-proportion="0.9230769">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MoveableRectangle.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableRectangle.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="20" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#362#380#0" expanded="true" />
-                    <element signature="e#842#866#0" expanded="true" />
-                    <element signature="e#1482#1507#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MoveableTriangle.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableTriangle.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="61" column="5" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.0">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -209,20 +280,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/brightcoveTest/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/TestApplicaton.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/LoginManager.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/SigninActivity.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/TestVIew.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/TestView.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/res/layout/volume_slider.xml" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/Option.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeObserverManager.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/OptionsAdapter.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeManager.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/res/layout/activity_voice_recognition.xml" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VoiceRecognitionActivity.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/SpeachUtils.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/SpeechUtils.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/BrightcoveWrapper.java" />
         <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MainActivity.java" />
-        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeSlider.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/Shape1.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/ShapeActivity.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/BackgroundLayout.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/shape2.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/Shape2.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableTriangle.java" />
+        <option value="$PROJECT_DIR$/brightcoveTest/res/layout/shape.xml" />
+        <option value="$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveablePentagon.java" />
       </list>
     </option>
   </component>
@@ -230,9 +303,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-26" />
+    <option name="x" value="391" />
     <option name="y" value="22" />
-    <option name="width" value="2540" />
+    <option name="width" value="2116" />
     <option name="height" value="1327" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -261,6 +334,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,6 +400,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xl-brightcove_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brightcoveTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -349,15 +442,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="reference.settingsdialog.project.gradle" />
+    <property name="options.lastSelected" value="copyright" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0184a7c2500beebd" />
@@ -370,6 +461,11 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.brightcovetest" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.brightcoveTest">
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -516,41 +612,43 @@
       <changelist id="cffe97e0-cf6d-498d-afea-33732b13c91b" name="Default" comment="" />
       <created>1371563432621</created>
       <updated>1371563432621</updated>
-      <workItem from="1371563435883" duration="56611000" />
+      <workItem from="1371563435883" duration="57104000" />
+      <workItem from="1371743631888" duration="761000" />
+      <workItem from="1371744407451" duration="37491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56611000" />
+    <option name="totallyTimeSpent" value="95356000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-26" y="22" width="2540" height="1327" extended-state="0" />
+    <frame x="391" y="22" width="2116" height="1327" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329591" sideWeight="0.67025685" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329591" sideWeight="0.67025685" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.026864475" sideWeight="0.67025685" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919005" sideWeight="0.67108536" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919005" sideWeight="0.67108536" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25870407" sideWeight="0.67108536" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33388567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32974318" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.28666115" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.28666115" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891467" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.28666115" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979952" sideWeight="0.28666115" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5251208" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999197" sideWeight="0.67025685" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999197" sideWeight="0.67025685" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24979952" sideWeight="0.67025685" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32974318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2410628" sideWeight="0.67108536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891467" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -614,49 +712,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/app/Activity.class">
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeSlider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="16" selection-start="16834" selection-end="16834" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/TestApplicaton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="38" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="67" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2853" selection-end="2853" vertical-scroll-proportion="-12.396227">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/SigninActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="34" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/TestView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="201" selection-end="205" vertical-scroll-proportion="0.0">
+        <state line="123" column="0" selection-start="3846" selection-end="3846" vertical-scroll-proportion="-40.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -665,7 +723,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/BrightcoveWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="37" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0">
+        <state line="114" column="41" selection-start="2822" selection-end="2822" vertical-scroll-proportion="1.386598">
           <folding />
         </state>
       </provider>
@@ -677,86 +735,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VideoController.java">
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="30" selection-start="5651" selection-end="5651" vertical-scroll-proportion="-28.692308">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/LoginManager.java">
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableRectangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="42" selection-start="3030" selection-end="3056" vertical-scroll-proportion="-53.076923">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#386#402#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/layout/side_menu_item.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="425" selection-end="425" vertical-scroll-proportion="0.2188329">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/layout/volume_slider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="39" selection-start="567" selection-end="567" vertical-scroll-proportion="0.29840848">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/OptionsAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="33" selection-start="2143" selection-end="2150" vertical-scroll-proportion="0.0">
+        <state line="31" column="20" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeManager.java">
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableCircle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="36" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.4541779">
+        <state line="69" column="0" selection-start="1922" selection-end="1922" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#362#380#0" expanded="true" />
-            <element signature="e#842#866#0" expanded="true" />
-            <element signature="e#1482#1507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="51" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.72890025">
+          <folding>
+            <element signature="e#608#626#0" expanded="true" />
+            <element signature="e#791#809#0" expanded="true" />
+            <element signature="e#1155#1173#0" expanded="true" />
+            <element signature="e#1282#1324#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="12" selection-start="14227" selection-end="14231" vertical-scroll-proportion="-25.653847">
+        <state line="796" column="15" selection-start="30145" selection-end="30146" vertical-scroll-proportion="-12.961538">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4032#4041#0" expanded="true" />
-            <element signature="e#4105#4129#0" expanded="true" />
-            <element signature="e#8971#11656#0" expanded="true" />
-            <element signature="e#11645#11646#0" expanded="true" />
-            <element signature="e#13824#14215#0" expanded="true" />
-            <element signature="e#14204#14205#0" expanded="true" />
-            <element signature="e#22625#22868#0" expanded="true" />
-            <element signature="e#22857#22858#0" expanded="true" />
-            <element signature="e#22935#23174#0" expanded="true" />
-            <element signature="e#23163#23164#0" expanded="true" />
+            <element signature="e#10378#13389#0" expanded="true" />
+            <element signature="e#13378#13379#0" expanded="true" />
+            <element signature="e#26904#27149#0" expanded="true" />
+            <element signature="e#27138#27139#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeSlider.java">
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/OptionsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="71" selection-start="2956" selection-end="2956" vertical-scroll-proportion="0.41192052">
+        <state line="76" column="33" selection-start="2086" selection-end="2093" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/BackgroundLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="69" selection-start="2309" selection-end="2309" vertical-scroll-proportion="1.2743824">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/ShapeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="485" selection-end="490" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#694#1096#0" expanded="true" />
+            <element signature="e#1085#1086#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/VolumeManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="5" selection-start="3909" selection-end="3909" vertical-scroll-proportion="-8.346154">
+          <folding>
+            <element signature="e#360#378#0" expanded="true" />
+            <element signature="e#443#461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="74" selection-start="994" selection-end="994" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveableTriangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="5" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/res/layout/shape.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="52" selection-start="1870" selection-end="1870" vertical-scroll-proportion="0.95013475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brightcoveTest/src/com/example/brightcovetest/MoveablePentagon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="8" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.42455244">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

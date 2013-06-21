@@ -1,7 +1,5 @@
 package com.example.brightcovetest;
 
-import java.io.Serializable;
-
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -13,7 +11,8 @@ import com.brightcove.player.event.EventEmitter;
 import com.brightcove.player.event.EventListener;
 import com.brightcove.player.event.EventType;
 import com.brightcove.player.view.BrightcoveVideoView;
-import com.example.brightcovetest.VideoController.ControlledVideo;
+
+import java.io.Serializable;
 
 public class BrightcoveWrapper extends BrightcoveVideoView implements OnPreparedListener {
 
@@ -23,7 +22,8 @@ public class BrightcoveWrapper extends BrightcoveVideoView implements OnPrepared
 	public BrightcoveWrapper(Context context) {
 		super(context);
 		init();
-	}
+
+    }
 
 	public BrightcoveWrapper(Context context, AttributeSet attributeSet) {
 		super(context, attributeSet);

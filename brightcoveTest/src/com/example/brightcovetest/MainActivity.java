@@ -1,17 +1,18 @@
 package com.example.brightcovetest;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -29,7 +30,7 @@ import android.widget.AbsListView;
 import android.widget.AbsoluteLayout;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Gallery;
 import android.widget.GridLayout;
@@ -52,6 +53,14 @@ import com.brightcove.player.media.Catalog;
 import com.brightcove.player.media.VideoListener;
 import com.brightcove.player.model.Video;
 import com.example.brightcovetest.VideoController.ControlledVideo;
+import com.example.brightcovetest.VolumeManager.VolumeObserver;
+import com.example.brightcovetest.SpeechUtils.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 
 public class MainActivity extends Activity {
     private static final String CATALOG_ID = "jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..";
@@ -61,6 +70,7 @@ public class MainActivity extends Activity {
     private static final String FULLSCREEN_FLAG = "fullScreenOn";
 
     private static final int SIGN_IN_REQUEST_CODE = 21;
+    private static final int VOICE_RECOGNITION_REQUEST_CODE = 22;
 
     private boolean isFullScreen = false;
     private MediaController controller;
@@ -78,15 +88,19 @@ public class MainActivity extends Activity {
     private TextView selectedTv;
     private String actionBarTitle;
     private OptionsAdapter adapter;
-    private Option[] menuOption = new Option[5];
-    private boolean isMute = false;
+    private Option[] menuOption = new Option[7];
+    private VolumeObserver observer;
+    private Button mbtSpeak;
+
 
     private static class MenuOptionIds {
         private static final int TRAILER_OPT_ID = 0;
         private static final int SPACE_OPT_ID = 1;
         private static final int VOLUME_SLIDER = 2;
         private static final int MUTE = 3;
-        private static final int SIGNIN = 4;
+        private static final int VOICE = 4;
+        private static final int SIGNIN = 5;
+        private static final int MOVEABLE_SHAPES= 6;
     }
 
     public MainActivity() {
@@ -95,7 +109,7 @@ public class MainActivity extends Activity {
         menuOption[2] = new Option("Volume", 1, MenuOptionIds.VOLUME_SLIDER);
         menuOption[3] = new Option("Mute", 0, MenuOptionIds.MUTE) {
 
-             @Override
+            @Override
             public String getName() {
                 if (VolumeManager.getInstance().isStreamMute(AudioManager.STREAM_MUSIC)) {
                     return "Unmute";
@@ -104,7 +118,9 @@ public class MainActivity extends Activity {
                 }
             }
         };
-        menuOption[4] = new Option("Sign In", 0, MenuOptionIds.SIGNIN);
+        menuOption[4] = new Option("Voice Recognition", 0, MenuOptionIds.VOICE);
+        menuOption[5] = new Option("Sign In", 0, MenuOptionIds.SIGNIN);
+        menuOption [6] = new Option ("Moveable Objects", 0, MenuOptionIds.MOVEABLE_SHAPES);
 
     }
 
@@ -197,13 +213,35 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        checkVoiceRecognition();
         VolumeManager.createInstance();
 
         setContentView(R.layout.activity_main);
         sideMenu = (ListView) findViewById(R.id.sideMenu);
 
         adapter = new OptionsAdapter(this, menuOption);
+        observer = new VolumeObserver() {
+            @Override
+            public void onVolumeUp() {
+            }
+
+            @Override
+            public void onVolumeDown() {
+            }
+
+            @Override
+            public void onVolumeMute(int volumeStream, boolean muteOn) {
+                if (volumeStream == AudioManager.STREAM_MUSIC) {
+                    OptionsAdapter menuAdapter = (OptionsAdapter) sideMenu.getAdapter();
+                    if (menuAdapter != null) {
+                        menuAdapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        };
+
+        VolumeManager.getInstance().registerObserver(observer);
+
 
         sideMenu.setAdapter(adapter);
         sideMenu.setOnItemClickListener(new OnItemClickListener() {
@@ -242,7 +280,9 @@ public class MainActivity extends Activity {
 
                         toggleMute();
                         break;
-
+                    case MenuOptionIds.VOICE:
+                        speak(view);
+                        break;
                     case MenuOptionIds.SIGNIN:
                         brightcoveVideoView.pause();
                         selectedTv = (TextView) sideMenu.getChildAt(position);
@@ -259,6 +299,9 @@ public class MainActivity extends Activity {
                             MainActivity.this.startActivityForResult(intent, SIGN_IN_REQUEST_CODE);
                         }
                         break;
+                    case MenuOptionIds.MOVEABLE_SHAPES:
+                        Intent intent = new Intent(MainActivity.this, ShapeActivity.class);
+                        MainActivity.this.startActivity(intent);
 
                     default:
                         break;
@@ -351,21 +394,94 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        if (requestCode == SIGN_IN_REQUEST_CODE) {
+        switch (requestCode) {
+            case SIGN_IN_REQUEST_CODE:
 
-            if (resultCode == RESULT_OK && selectedTv != null) {
-                Log.d("", "SIGNIN setting textView " + selectedTv);
-                toggleSigninOut();
+                if (resultCode == RESULT_OK && selectedTv != null) {
+                    Log.d("", "SIGNIN setting textView " + selectedTv);
+                    toggleSigninOut();
 //                adapter.newOptionsList(menuOption);
 //                sideMenu.setAdapter(adapter);
 
-            }
-            if (resultCode == RESULT_CANCELED) {
-                //Write your code if there's no result
-            }
+                }
+                break;
+
+            case VOICE_RECOGNITION_REQUEST_CODE:
+                if (resultCode == RESULT_OK) {
+                    ArrayList<String> textMatchList = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    onSpeechInput(textMatchList);
+
+                } else if (resultCode == RecognizerIntent.RESULT_AUDIO_ERROR) {
+                    showToastMessage("Audio Error");
+                } else if (resultCode == RecognizerIntent.RESULT_CLIENT_ERROR) {
+                    showToastMessage("Client Error");
+                } else if (resultCode == RecognizerIntent.RESULT_NETWORK_ERROR) {
+                    showToastMessage("Network Error");
+                } else if (resultCode == RecognizerIntent.RESULT_NO_MATCH) {
+                    showToastMessage("No Match");
+                } else if (resultCode == RecognizerIntent.RESULT_SERVER_ERROR) {
+                    showToastMessage("Server Error");
+                }
+                break;
+
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
         }
     }//onActivityResult
 
+    protected void onSpeechInput(ArrayList<String> textMatchList) {
+        if (!textMatchList.isEmpty()) {
+            String firstMatch = textMatchList.get(0);
+            SpeechCmd command = SpeechCmd.getSpeechCmd(firstMatch);
+            switch (command) {
+                case SEARCH:
+                    String searchQuery = textMatchList.get(0);
+                    searchQuery = searchQuery.replace("search", "");
+                    Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
+                    search.putExtra(SearchManager.QUERY, searchQuery);
+                    startActivity(search);
+                    break;
+
+                case TOGGLE_MUTE:
+                    toggleMute();
+                    break;
+
+                case VOLUME_UP:
+                    VolumeManager.getInstance().adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, 0);
+                    VolumeManager.getInstance().notifyVolumeUp();
+                    break;
+
+                case VOLUME_DOWN:
+                    VolumeManager.getInstance().adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_LOWER, 0);
+                    VolumeManager.getInstance().notifyVolumeDown();
+                    break;
+
+                case LANDSCAPE:
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                    break;
+
+                case PORTRAIT:
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    break;
+
+                case SCREEN_DEFAULT:
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+                    break;
+
+                default:
+                    showToastMessage("Unknown command: " + firstMatch);
+                    break;
+
+
+            }
+
+        }
+    }
+
+
+    void showToastMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -483,31 +599,18 @@ public class MainActivity extends Activity {
     }
 
     private void toggleSigninOut() {
-        if (menuOption[4].getName().equals("Sign In")) {
-            menuOption[4].setName("Sign Out");
+        if (menuOption[5].getName().equals("Sign In")) {
+            menuOption[5].setName("Sign Out");
         } else {
-            menuOption[4].setName("Sign In");
+            menuOption[5].setName("Sign In");
         }
         ((OptionsAdapter) sideMenu.getAdapter()).notifyDataSetChanged();
     }
 
     private void toggleMute() {
-//        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        VolumeManager.getInstance().setStreamMute(AudioManager.STREAM_MUSIC, !VolumeManager.getInstance().isStreamMute(AudioManager.STREAM_MUSIC));
+        OptionsAdapter adapter = (OptionsAdapter) sideMenu.getAdapter();
 
-//        if (!VolumeManager.getInstance().isStreamMute(AudioManager.STREAM_MUSIC)) {
-
-            VolumeManager.getInstance().setStreamMute(AudioManager.STREAM_MUSIC, !VolumeManager.getInstance().isStreamMute(AudioManager.STREAM_MUSIC));
-
-
-//            menuOption[3].setName("Unmute");
-//        } else {
-//            VolumeManager.getInstance().setStreamMute(AudioManager.STREAM_MUSIC, false);
-
-//            menuOption[3].setName("Mute");
-//        }
-
-        //isMute = !isMute;
-        OptionsAdapter adapter = (OptionsAdapter)sideMenu.getAdapter();
         if (adapter != null) {
             adapter.notifyDataSetChanged();
         }
@@ -610,35 +713,23 @@ public class MainActivity extends Activity {
             @Override
             public void processEvent(Event event) {
                 Log.d("", "BC_PLAYER: " + EmitEvents.didSetVideo.toString());
-                brightcoveVideoView.start();
+//                brightcoveVideoView.start();
             }
         });
 
-        eventEmitter.on(EmitEvents.onVideoPrepared.toString(), new EventListener() {
-
-            @Override
-            public void processEvent(Event arg0) {
-                Log.d("", "BC_PLAYER " + EmitEvents.onVideoPrepared.toString());
-
-                hideLoadingSpinner();
-            }
-        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 
     public synchronized void setFullScreen(boolean fullscreenOn) {
-        Log.d("", "ONCREATE setFullScreen called.");
         if (videoContainer != null) {
-            Log.d("", "ONCREATE setFullScreen called. 1");
             if (fullscreenOn) {
                 isFullScreen = true;
-                Log.d("", "ONCREATE setFullScreen called. 2");
                 originalParams = (android.widget.LinearLayout.LayoutParams) videoContainer.getLayoutParams();
 
                 updateParentForFullscreen(videoContainer);
@@ -654,9 +745,7 @@ public class MainActivity extends Activity {
 
                 findViewById(android.R.id.content).invalidate();
             } else {
-                Log.d("", "ONCREATE setFullScreen called. 3");
                 if (originalCoordinate != null) {
-                    Log.d("", "ONCREATE setFullScreen called. 4");
                     isFullScreen = false;
                     videoContainer.setX(originalCoordinate.x);
                     videoContainer.setY(originalCoordinate.y);
@@ -671,6 +760,46 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    public void checkVoiceRecognition() {
+        // Check if voice recognition is present
+        PackageManager pm = getPackageManager();
+        List<ResolveInfo> activities = pm.queryIntentActivities(new Intent(
+                RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
+        if (activities.size() == 0) {
+            mbtSpeak.setEnabled(false);
+            mbtSpeak.setText("Voice recognizer not present");
+            Toast.makeText(this, "Voice recognizer not present",
+                    Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    public void speak(View view) {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
+        // Specify the calling package to identify your application
+        intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getClass()
+                .getPackage().getName());
+
+        // Display an hint to the user about what he should say.
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Say a Command");
+
+        // Given an hint to the recognizer about what the user is going to say
+        //There are two form of language model available
+        //1.LANGUAGE_MODEL_WEB_SEARCH : For short phrases
+        //2.LANGUAGE_MODEL_FREE_FORM  : If not sure about the words or phrases and its domain.
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+
+
+        //int noOfMatches = Integer.parseInt(msTextMatches.getSelectedItem().toString());
+        // Specify how many results you want to receive. The results will be
+        // sorted where the first result is the one with higher confidence.
+        // intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, noOfMatches);
+        //Start the Voice recognizer activity for the result.
+        startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
